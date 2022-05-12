@@ -2,10 +2,10 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "https://github.com/chiru-labs/ERC721A/blob/main/contracts/ERC721A.sol";
+import "https://github.com/chiru-labs/ERC721A/blob/main/contracts/extensions/ERC721AQueryable.sol";
 import "https://github.com/chiru-labs/ERC721A/blob/main/contracts/extensions/ERC721ABurnable.sol";
 
-contract pakistanNft is ERC721A, Ownable, ERC721ABurnable{
+contract pakistanNft is ERC721A, Ownable, ERC721ABurnable, ERC721AQueryable{
 
     string public baseUriExtended;
     uint256 public immutable maxSupply = 100;
@@ -28,4 +28,5 @@ contract pakistanNft is ERC721A, Ownable, ERC721ABurnable{
      function _baseURI() internal view override returns (string memory) {
         return baseUriExtended;
     }
+
 }
